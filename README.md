@@ -3,8 +3,12 @@ A collection of config files from my daily driver on linux
 
 What software do I use?
 
-Operating System: Fedora \n
-Desktop: Sway tiling window manager \n
-Shell: zsh with powerlevel10k \n
-Terminal Emulator: foot \n
+Operating System: Fedora
+
+Desktop: Sway tiling window manager
+
+Shell: zsh with powerlevel10k
+
+Terminal Emulator: foot
+
 Web Browser: qutebrowser
