@@ -29,7 +29,7 @@ python3
 git  
 fastfetch  
 spf  
-openssh-server
-ncurses
+openssh-server  
+ncurses  
 btop  
-ollama
+ollama  
