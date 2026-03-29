@@ -12,3 +12,14 @@ Shell: zsh with powerlevel10k
 Terminal Emulator: foot
 
 Web Browser: qutebrowser
+
+Notification manager: Mako
+
+
+Other terminal programs installed:
+fzf
+bat
+radeontop
+lazygit
+nvim
+lazyvim
