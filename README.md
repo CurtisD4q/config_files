@@ -5,7 +5,7 @@ What software do I use?
 
 Operating System: Fedora
 
-Desktop: Sway
+Desktop: Sway -> upgrading to swayfx soon :)
 
 Shell: zsh with powerlevel10k
 
