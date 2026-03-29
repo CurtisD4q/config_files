@@ -33,5 +33,5 @@ openssh-server
 ncurses  
 btop  
 ollama  
-tldr`
+tldr  
 playerctl  
