@@ -5,7 +5,7 @@ What software do I use?
 
 Operating System: Fedora
 
-Desktop: Sway tiling window manager
+Desktop: Sway
 
 Shell: zsh with powerlevel10k
 
@@ -18,19 +18,18 @@ Notification manager: Mako
 
 Other terminal programs installed:
 
-fzf
-
-bat
-
-radeontop
-
-lazygit
-
-nvim
-
-lazyvim   
-gfdg  
-gfdgd   
-
-gfdgdsg   
-
+fzf  
+bat  
+radeontop  
+lazygit  
+nvim  
+lazyvim     
+ripgrep  
+python3  
+git  
+fastfetch  
+spf  
+openssh-server
+ncurses
+btop  
+ollama
