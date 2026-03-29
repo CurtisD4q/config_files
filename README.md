@@ -28,7 +28,7 @@ lazygit
 
 nvim
 
-lazyvim
+lazyvim   
 gfdg  
 gfdgd   
 
