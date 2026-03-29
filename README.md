@@ -18,8 +18,12 @@ Notification manager: Mako
 
 Other terminal programs installed:
 fzf
+
 bat
+
 radeontop
+
 lazygit
-nvim
+
+nvim \n
 lazyvim
