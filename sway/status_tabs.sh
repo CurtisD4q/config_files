@@ -6,13 +6,13 @@
 set -u
 
 # Colors
-COLOR_WIFI="9B30FF"
-COLOR_BT="#9B30FF"
-COLOR_BATT="#9B30FF"
-COLOR_VOL="#9B30FF"
-COLOR_CPU="#9B30FF"
-COLOR_GPU="#9B30FF"
-COLOR_CLOCK="#9B30FF"
+COLOR_WIFI="ab4cff"
+COLOR_BT="#ab4cff"
+COLOR_BATT="#ab4cff"
+COLOR_VOL="#ab4cff"
+COLOR_CPU="#ab4cff"
+COLOR_GPU="#ab4cff"
+COLOR_CLOCK="#ab4cff"
 
 # ----------------------
 # Helpers
@@ -161,7 +161,7 @@ emit_status() {
   first=true
 
   # wifi
-  out+='{"name":"wifi","full_text:":" '"$wifi"' ","color":"'"$COLOR_WIFI"'","instance":"wifi"}'
+  out+='{"name":"wifi","full_text":" '"Wifi: $wifi"' ","color":"'"$COLOR_WIFI"'","instance":"wifi"}'
   first=false
 
   # bluetooth
