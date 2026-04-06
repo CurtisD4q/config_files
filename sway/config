@@ -31,7 +31,7 @@ output * bg /home/curtis/Pictures/wallpaper_purple.jpeg fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 #Font 
-font pango:Adwaita Sans Regular 11
+font pango:Adwaita Sans Regular 12
 
 ### Idle configuration
 #
@@ -66,22 +66,11 @@ exec ~/.local/bin/swayidle-media-wrap
 for_window [app_id=".*"] border pixel 5
 for_window [tiling] border normal 
 
-# -----------------------------
-# Window Borders (Monochrome + Neon Purple Outer)
-# -----------------------------
-# Format: client.<state> <border> <background> <text> <indicator>
-# Border color = neon purple (#9B30FF)
-# Background/text = monochrome grayscale
-
-client.focused          #9B30FF #1E1E1E #FFFFFF #9B30FF
-client.focused_inactive #9B30FF #2E2E2E #CCCCCC #9B30FF
-client.unfocused        #9B30FF #111111 #AAAAAA #9B30FF
-client.urgent           #FF0000 #1E1E1E #FFFFFF #FF0000
-client.placeholder      #333333 #1E1E1E #BBBBBB #9B30FF
 
 #Gaps between windows
-gaps inner 10   
-gaps outer 13 
+gaps top 50
+gaps inner 7   
+gaps outer 15
 
 ### Key bindings
 #
@@ -94,7 +83,7 @@ gaps outer 13
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec $menu -N "#222222" -n "#ab4cff" -S "#ab4cff" -s "#ffffff"
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -234,23 +223,45 @@ bindsym $mod+r mode "resize"
     # Special key to take a screenshot with grim
     bindsym Print exec grim
 
+# -----------------------------
+# Window Borders (Monochrome + Neon Purple Outer)
+# -----------------------------
+# Format: client.<state> <border> <background> <text> <indicator>
+# Border color = neon purple (#9B30FF)
+# Background/text = monochrome grayscale
+
+client.focused          #5b13a0 #851fd4 #FFFFFF #7c3aed #851fd4
+client.focused_inactive #51b3a0 #851fd4 #CCCCCC #3b3052 #851fd4
+client.unfocused        #0d0d0d #262226 #908caa #2a2139 #262226
+client.urgent           #834842 #a45a52 #ffffff #be185d #a45a52
+
+corner_radius 3
+shadow_blur_radius 7
+shadows enable  
+#titlebar_seperator enable
+#default_dim_inactive 0.5
 #
-# Status Bar:
+# Status Bar
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
+    swaybar_command waybar
     position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command ~/.config/sway/status_tabs.sh
+    #status_command ~/.config/sway/status_tabs.sh
 
-    colors {
-        statusline #ffffff
-        background #222222
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    #colors {
+        #statusline #ffffff
+        #background #222222
+        
+        #inactive_workspace #32323200 #32323200 #2a2139
+        #active_workspace   #851fd4 #851fd4 #ffffff
+        #focused_workspace  #851fd4 #851fd4 #ffffff
+        #urgent_workspace   #9d174d #be185d #fffff
+    #}
 }
 
 include /etc/sway/config.d/* 
-
+exec swayfx
