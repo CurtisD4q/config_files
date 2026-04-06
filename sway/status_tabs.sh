@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+#THIS CODE IS FOR SWAYBAR, WHICH I NO LONGER USE AND IS THEREFORE OBSELETE
+
 # i3bar protocol status script: wifi, bluetooth, battery, volume, cpu%, gpu%, clock
 # Requirements: jq, swaymsg
 # Optional: nmcli, bluetoothctl, upower, pactl, nvidia-smi
