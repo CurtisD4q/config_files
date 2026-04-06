@@ -34,8 +34,8 @@ ncurses
 btop  
 ollama  
 tldr  
-playerctl
-brightnessctl
-sherlock
-nmap
-wlogout
+playerctl  
+brightnessctl  
+sherlock  
+nmap  
+wlogout  
