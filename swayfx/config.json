@@ -1,0 +1,15 @@
+{
+  "shadows": {
+    "name": "waybar",
+    "match": {
+      "namespace": "waybar",
+      "layer": "top"
+    },
+    "offset_x": 0,
+    "offset_y": 8,
+    "radius": 28,
+    "spread": 2,
+    "color": [0, 0, 0, 0.75],
+    "blur": 12
+  }
+}
