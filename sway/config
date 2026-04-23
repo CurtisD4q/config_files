@@ -16,7 +16,8 @@ set $right l
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
-set $menu wmenu-run
+#set $menu dmenu 
+set $menu wofi
 
 ### Output configuration
 #
@@ -35,14 +36,14 @@ font pango:Adwaita Sans Regular 12
 
 ### Idle configuration
 #
-# Example configuration:
-#
-exec ~/.local/bin/swayidle-media-wrap
-
+# This is for when me screen goes into idle
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+exec ~/.local/bin/swayidle-media-wrap
+
 
 ### Input configuration
 #
@@ -83,7 +84,8 @@ gaps outer 15
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu -N "#222222" -n "#ab4cff" -S "#ab4cff" -s "#ffffff"
+    #bindsym $mod+d exec $menu
+    bindsym $mod+d exec $menu --show drun
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -97,6 +99,7 @@ gaps outer 15
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
 #
 # Moving around:
 #
@@ -247,21 +250,10 @@ shadows enable
 bar {
     swaybar_command waybar
     position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    #status_command ~/.config/sway/status_tabs.sh
-
-    #colors {
-        #statusline #ffffff
-        #background #222222
-        
-        #inactive_workspace #32323200 #32323200 #2a2139
-        #active_workspace   #851fd4 #851fd4 #ffffff
-        #focused_workspace  #851fd4 #851fd4 #ffffff
-        #urgent_workspace   #9d174d #be185d #fffff
-    #}
 }
 
 include /etc/sway/config.d/* 
 exec swayfx
+
+
+
