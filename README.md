@@ -11,7 +11,7 @@ Shell: zsh with powerlevel10k
 
 Terminal Emulator: foot
 
-Web Browser: qutebrowser
+Web Browser: qutebrowser / firefox / librewolf
 
 Notification manager: Mako
 
