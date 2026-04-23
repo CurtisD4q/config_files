@@ -41,26 +41,33 @@
   },
 
   "network": {
-    "format-wifi": " {essid}",
-    "format-ethernet": "   Connected",
+    "format-wifi": "󰖪  Wifi: {essid}",
+    "format-ethernet": " 󰖪  Ethernet: {ipaddr}",
+    "format-disconnected": "󰖪  Network Disconnected",
+    "format-linked": "󰖪   No IP",
+    "format-disabled": "󰖪  Network Disable",
     "on-click": "cinnamon-settings network"
   },
 
   "pulseaudio": {
-    "format": "{volume}% ",
+    "format": " {volume}%",
     "format-muted": "",
     "on-click": "cinnamon-settings sound"
   },
 
   "backlight": {
-    "format": "{percent}% ",
+    "format": " {percent}%",
     "on-click": "cinnamon-settings screen"
   },
 
-  "battery": {
-    "format": "{capacity}% ",
-    "on-click": "cinnamon-settings power"
-  },
+"battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-critical": "󰂃 {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "critical": 10
+},
 
   "cpu": {
     "format": " {usage}%",
@@ -88,7 +95,8 @@
     "format-activated": "<span color='#f38ba8'>Manual Awake</span>",
     "format-deactivated": "Auto Sleep",
     "tooltip-format-activated": "System will NOT sleep",
-    "tooltip-format-deactivated": "System follows power rules"
+    "tooltip-format-deactivated": "System follows power rules",
+    "on-click": "~/.config/sway/inhibit-toggle.sh"
   },
 
 
