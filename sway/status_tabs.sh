@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-#THIS CODE IS FOR SWAYBAR, WHICH I NO LONGER USE AND IS THEREFORE OBSELETE
+# ⚠️ DEPRECATED/OBSOLETE
+# This file is no longer maintained or used.
+# Reason: Swaybar is no longer part of the workflow
+# Last used: [06th April 2026]
 
 # i3bar protocol status script: wifi, bluetooth, battery, volume, cpu%, gpu%, clock
 # Requirements: jq, swaymsg
