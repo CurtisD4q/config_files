@@ -1,0 +1,11 @@
+window {
+  appearance = "minimal";
+  width = 50%;
+  height = 40%;
+}
+listview {
+  font = "monospace 12";
+  selected-background = "#005f87";
+  background = "#111111";
+  color = "#ffffff";
+}
