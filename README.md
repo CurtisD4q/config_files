@@ -1,4 +1,4 @@
-# config_files
+# dotfiles
 A collection of config files from my daily driver on linux
 
 What software do I use?
