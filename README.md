@@ -15,6 +15,9 @@ Web Browser: qutebrowser / firefox / librewolf
 
 Notification manager: Mako
 
+things to get in future:
+
+betterlockscreen
 
 Other terminal programs installed:
 
