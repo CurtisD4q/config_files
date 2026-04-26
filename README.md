@@ -3,21 +3,27 @@ A collection of config files from my daily driver on linux
 
 What software do I use?
 
+
 Operating System: Fedora
+
 
 Desktop: Swayfx + Waybar
 
+
 Shell: zsh with powerlevel10k
+
 
 Terminal Emulator: foot
 
+
 Web Browser: qutebrowser / firefox / librewolf
+
 
 Notification manager: Mako
 
-things to get in future:
 
-gtklock
+things to get in future: gtklock
+
 
 Other terminal programs installed:
 
