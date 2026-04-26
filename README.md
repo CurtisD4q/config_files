@@ -17,7 +17,7 @@ Notification manager: Mako
 
 things to get in future:
 
-betterlockscreen
+gtklock
 
 Other terminal programs installed:
 
