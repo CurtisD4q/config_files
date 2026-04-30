@@ -13,6 +13,10 @@ window#waybar {
     border-radius: 10px;
 }
 
+#battery.critical {
+    color: #be185d;
+}
+
 /* Workspaces */
 #workspaces button {
     padding: 4px 8px;
