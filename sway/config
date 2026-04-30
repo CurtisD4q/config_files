@@ -98,7 +98,6 @@ gaps outer 15
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-
 #
 # Moving around:
 #
@@ -179,8 +178,25 @@ gaps outer 15
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
+    
+    #launch the following applications in floating mode
+    
+    for_window [app_id = "cinnamon-settings"] floating enable
+    for_window [app_id = "blueman-manager"] floating enable
+    for_window [app_id = "gnome-system-monitor"] floating enable   
+    for_window [app_id="wofi"] border none
 
-    # Swap focus between the tiling area and the floating area
+    for_window [window_type="dialog"] floating enable
+    for_window [window_type="utility"] floating enable
+    for_window [window_type="toolbar"] floating enable
+    for_window [window_type="splash"] floating enable
+    for_window [window_type="menu"] floating enable
+    for_window [window_type="popup_menu"] floating enable
+    for_window [window_type="tooltip"] floating enable
+    for_window [window_type="notification"] floating enable
+
+    for_window [shell="xwayland"] focus follows mouse no
+
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
@@ -196,8 +212,7 @@ gaps outer 15
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
-#
+    bindsym $mod+minus exec ~/.config/sway/scratchpad.sh next
 # Resizing containers:
 #
 mode "resize" {
@@ -247,7 +262,7 @@ client.focused_inactive #51b3a0 #851fd4 #CCCCCC #3b3052 #851fd4
 client.unfocused        #0d0d0d #262226 #908caa #2a2139 #262226
 client.urgent           #834842 #a45a52 #ffffff #be185d #a45a52
 
-corner_radius 3
+corner_radius 2
 shadow_blur_radius 7
 shadows enable
 
