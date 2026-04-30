@@ -6,7 +6,7 @@
   "margin-left": 23,
   "margin-right": 23,
 
-  "modules-left": ["custom/left", "sway/workspaces", "sway/mode", "sway/window"],
+  "modules-left": ["custom/left", "sway/workspaces", "sway/mode", "sway/window", "custom/scratchpad"],
   "modules-center": ["clock"],
   "modules-right": [
     "idle_inhibitor",
@@ -66,22 +66,29 @@
     "format-plugged": "  {capacity}%",
     "format-critical": "󰂃 {capacity}%",
     "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    "critical": 10
+    "interval": 1,
+    "critical": 15,
+    "states": {
+        "critical": 15
+    }
 },
 
   "cpu": {
     "format": " {usage}%",
+    "interval": 1,
     "on-click": "gnome-system-monitor"
   },
 
   "memory": {
     "format": " {}%",
+    "interval": 1,
     "on-click": "gnome-system-monitor"
   },
 
   "temperature": {
     "critical-threshold": 80,
     "format": " {temperatureC}°C",
+    "interval": 1,
     "on-click": "gnome-system-monitor"
   },
 
@@ -110,6 +117,14 @@
     "on-click": "wlogout", // Opens a visual menu for Logout/Shutdown/Restart
     "tooltip-format": "Power Menu",
     "tooltip": true
+  },
+
+  "custom/scratchpad": {
+    "format": " 󰖯 {}",
+    "exec": "~/.config/sway/scratchpad.sh",
+    "interval": 1,
+    "on-click": "swaymsg scratchpad show",
+    "tooltip": false
   },
 
   "sway/window": { "max-length": 50 },
