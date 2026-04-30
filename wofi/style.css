@@ -1,0 +1,44 @@
+* {
+    border-radius: inherit;
+}
+
+#window {
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid #851fd4;
+    padding: 8px;
+    font-family: "Adwaita Sans Regular";
+    font-size: 15px;
+}
+
+#input {
+    background-color: #2e2e2e;
+    color: #ffffff;
+    border: none;
+    padding: 8px;
+    margin: 4px;
+}
+
+#inner-box {
+    background-color: #222222;
+}
+
+#outer-box {
+    background: transparent;
+    background-color: #222222;
+    padding: 8px;
+}
+
+#entry {
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: #f0f0f0;
+}
+
+#entry:selected {
+    background-color: #851fd4;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+
