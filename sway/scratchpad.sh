@@ -30,10 +30,17 @@ update_total() {
 
 next_window() {
   stored=$(get_stored)
-  index=$(get_index)
-  next=$(((index % stored) + 1))
-  echo "$next" >"$index_file"
-  swaymsg scratchpad show
+  hidden=$(get_hidden)
+
+  if [ "$hidden" -eq 0 ]; then
+    # all windows visible, hide the current one
+    swaymsg scratchpad show
+  else
+    index=$(get_index)
+    next=$(((index % stored) + 1))
+    echo "$next" >"$index_file"
+    swaymsg scratchpad show
+  fi
 }
 
 status() {
