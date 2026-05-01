@@ -48,3 +48,6 @@ brightnessctl
 sherlock  
 nmap  
 wlogout  
+nmgui  
+ytcui  
+minamalistmp3player  
