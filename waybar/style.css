@@ -13,10 +13,6 @@ window#waybar {
     border-radius: 10px;
 }
 
-#battery.critical {
-    color: #be185d;
-}
-
 /* Workspaces */
 #workspaces button {
     padding: 4px 8px;
@@ -75,12 +71,15 @@ window#waybar {
 /* Hover = focused purple */
 #clock:hover,
 #cpu:hover,
+#bluetooth:hover,
 #memory:hover,
 #temperature:hover,
 #battery:hover,
 #network:hover,
 #pulseaudio:hover,
-#backlight:hover {
+#backlight:hover,
+#idle_inhibitor:hover
+{
     background: #851fd4;
 }
 
@@ -92,10 +91,7 @@ window#waybar {
 }
 
 /* Battery states */
-#battery.warning {
-    background: #7e1ab8;
-}
 
 #battery.critical {
-    background: #be185d;
+    color: #be185d;
 }
