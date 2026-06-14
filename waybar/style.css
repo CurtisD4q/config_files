@@ -1,16 +1,16 @@
 * {
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     font-family: "Adwaita Sans" , medium;
     font-size: 13px;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(13, 11, 9, 0.9);
+    background: rgba(23, 5, 39, 0.9);
     color: #ffffff;
     margin: 12px 10px;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 /* Workspaces */
@@ -90,7 +90,50 @@ window#waybar {
     color: #908caa;
 }
 
+/* CPU states*/
+#cpu {
+  color: #a6e3a1;
+}
+
+#cpu.warning {
+  color: #a6e3a1;
+}
+
+#cpu.critical {
+  color: #be185d;
+}
+
+/* Memory/RAM */
+#memory {
+  color: #a6e3a1;
+}
+
+#memory.warning {
+  color: #a6e3a1;
+}
+
+#memory.critical {
+  color: #be185d;
+}
+
+/* Temperature */
+#temperature {
+  color: #a6e3a1;
+}
+
+#temperature.critical {
+  color: #be185d;
+}
+
 /* Battery states */
+
+#battery {
+  color: #a6e3a1;  /* green by default */
+}
+
+#battery.charging {
+  color: #a6e3a1;  /* green when charging */
+}
 
 #battery.critical {
     color: #be185d;
