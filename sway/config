@@ -262,8 +262,9 @@ for_window [app_id=".*"] border pixel 4
 #default_floating_border pixel 3
 
 smart_corner_radius off
-corner_radius 8
+blur enable
 shadows enable
+corner_radius 8
 shadow_blur_radius 20
 
 layer_effects "waybar" {
