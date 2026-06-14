@@ -2,21 +2,21 @@
   "layer": "top",
   "position": "top",
   "exclusive": true,
-  "margin-top": 13,
-  "margin-left": 23,
-  "margin-right": 23,
+  "margin-top": 11,
+  "margin-left": 18,
+  "margin-right": 18,
 
   "modules-left": ["custom/left", "sway/workspaces", "sway/mode", "sway/window", "custom/scratchpad"],
-  "modules-center": ["clock"],
+  "modules-center": ["clock", "custom/fuzzel"],
   "modules-right": [
     "idle_inhibitor",
     "pulseaudio",
     "bluetooth",
     "network",
+    "backlight",
     "cpu",
     "memory",
-    "temperature",
-    "backlight",
+    "temperature", 
     "battery",
     "tray",
     "custom/gap",
@@ -41,12 +41,12 @@
   },
 
   "network": {
-    "format-wifi": "󰖪  Wifi: {essid}",
-    "format-ethernet": " 󰖪  Ethernet: {ipaddr}",
+    "format-wifi": "󰖩 Wifi: {essid}",
+    "format-ethernet": "󰈀 Ethernet: {ipaddr}",
     "format-disconnected": "󰖪  Network Disconnected",
-    "format-linked": "󰖪   No IP",
-    "format-disabled": "󰖪  Network Disable",
-    "on-click": "cinnamon-settings network"
+    "format-linked": "󰖩   No IP",
+    "format-disabled": "󰖪  Network Disabled",
+    "on-click": "nmgui"
   },
 
   "pulseaudio": {
@@ -125,6 +125,13 @@
     "interval": 1,
     "on-click": "swaymsg scratchpad show",
     "tooltip": false
+  },
+
+  "custom/fuzzel": {
+  "format": " 󰀻 ",
+  "on-click": "fuzzel --show drun",
+  "tooltip-format": "App Launcher",
+  "tooltip": true
   },
 
   "sway/window": { "max-length": 50 },
