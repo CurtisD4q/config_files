@@ -264,13 +264,13 @@ for_window [app_id=".*"] border pixel 4
 smart_corner_radius off
 corner_radius 8
 shadows enable
-shadow_blur_radius 15
-shadow_offset 0 4
-default_dim_inactive 0.3
+shadow_blur_radius 20
 
 layer_effects "waybar" {
+    blur enable
     shadows enable
-    shadow_blur_radius 15
+    corner_radius 8
+    shadow_blur_radius 20
 }
 
 # Status Bar
