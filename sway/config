@@ -4,25 +4,28 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+### Tiling layout
+default_orientation horizontal
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
+set $left Left
+set $down Down
+set $up Up
+set $right Right
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
 #set $menu dmenu 
-set $menu wofi
+set $menu fuzzel
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/curtis/Pictures/wallpaper_purple.jpeg fill
+output * bg /home/curtis/Pictures/image1.jpg fill
 
 #
 # Example configuration:
@@ -54,7 +57,7 @@ exec ~/.local/bin/swayidle-media-wrap
        tap enabled
        natural_scroll enabled
        middle_emulation enabled
-   }
+  }
 #
    input type:keyboard {
        xkb_layout "gb"
@@ -63,14 +66,14 @@ exec ~/.local/bin/swayidle-media-wrap
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
 
-#Normal borders so gaps are visible 
-for_window [app_id=".*"] border pixel 5
-#for_window [tiling] border normal 
-
 #Gaps between windows
-gaps top 50
-gaps inner 7   
-gaps outer 15
+#gaps top 10
+gaps inner 10
+gaps outer 7
+gaps left 7
+gaps right 7
+gaps bottom 7
+gaps top 7
 
 ### Key bindings
 #
@@ -106,22 +109,13 @@ gaps outer 15
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+
 #
 # Workspaces:
 #
@@ -163,15 +157,22 @@ gaps outer 15
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
+    # $mod+h or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    
+    # mod+h and mod+v sets up the next window to either
+    # vertical or horizontal
+    bindsym $mod+h splith
     bindsym $mod+v splitv
 
+    # mod+Shift+h changes all windows in the workspace to 
+    # either verical or horizontal
+    bindsym $mod+Shift+h layout splith 
+
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    #bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
-    bindsym $mod+e exec ~/.config/sway/toggle_tiling_gaps.sh
+    bindsym $mod+Shift+t exec ~/.config/sway/toggle_tiling_gaps.sh
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -183,8 +184,7 @@ gaps outer 15
     
     for_window [app_id = "cinnamon-settings"] floating enable
     for_window [app_id = "blueman-manager"] floating enable
-    for_window [app_id = "gnome-system-monitor"] floating enable   
-    for_window [app_id="wofi"] border none
+    for_window [app_id = "gnome-system-monitor"] floating enable
 
     for_window [window_type="dialog"] floating enable
     for_window [window_type="utility"] floating enable
@@ -225,12 +225,6 @@ mode "resize" {
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
 
-    # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
-
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -257,23 +251,39 @@ bindsym $mod+r mode "resize"
 # Border color = neon purple (#9B30FF)
 # Background/text = monochrome grayscale
 
-client.focused          #5b13a0 #851fd4 #FFFFFF #7c3aed #851fd4
-client.focused_inactive #51b3a0 #851fd4 #CCCCCC #3b3052 #851fd4
-client.unfocused        #0d0d0d #262226 #908caa #2a2139 #262226
-client.urgent           #834842 #a45a52 #ffffff #be185d #a45a52
+client.focused          #9229e6 #9229e6 #FFFFFF #9229e6 #9229e6
+client.focused_inactive #260940 #260940 #CCCCCC #260940 #260940
+client.unfocused        #260940 #260940 #CCCCCC #260940 #260940
+client.urgent           #834842 #a45a52 #FFFFFF #be185d #a45a52
 
-corner_radius 2
-shadow_blur_radius 7
+#Normal borders so gaps are visible 
+for_window [app_id=".*"] border pixel 4
+#default_border pixel 3        
+#default_floating_border pixel 3
+
+smart_corner_radius off
+corner_radius 8
 shadows enable
+shadow_blur_radius 15
+shadow_offset 0 4
+
+#layer_effects "waybar" {
+#    blur enable
+#    shadows enable
+#    shadow_blur_radius 10
+#}
 
 # Status Bar
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    swaybar_command waybar
-    position top
-}
+
+#bar {
+#    swaybar_command waybar
+#    position top
+#}
+
+exec ~/.config/sway/waybar-launch.sh
+#exec ~/.config/sway/waybar-autohide.sh
 
 include /etc/sway/config.d/* 
 exec swayfx
-
