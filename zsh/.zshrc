@@ -30,4 +30,6 @@ source <(fzf --zsh)
 source ~/.zshplugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
-
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
