@@ -1,5 +1,5 @@
 # dotfiles
-A collection of config files from my daily driver on linux
+A collection of config files from my daily use of linux
 
 What software do I use?
 
