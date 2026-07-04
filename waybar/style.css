@@ -1,6 +1,6 @@
 * {
     border: none;
-    border-radius: 8px;
+    border-radius: 9px;
     font-family: "Adwaita Sans" , medium;
     font-size: 13px;
     min-height: 0;
@@ -8,51 +8,63 @@
 
 window#waybar {
     background: rgba(34, 9, 56, 0.99);
-    color: #ffffff;
+    color: #dccfef;
     margin: 12px 10px;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 /* Workspaces */
 #workspaces button {
     padding: 4px 8px;
-    margin: 4px 3px;
+    margin: 4px 2px;
     border-radius: 8px;
     color: #908caa;
     background: transparent;
 }
 
 #workspaces button.active {
-    background: #222222;
-    color: #ffffff;
+    background: #c9b2db;
+    color: #220938;
 }
 
 #workspaces button.focused {
-    background: #851fd4;
-    color: #ffffff;
+    background: #c9b2db;
+    color: #220938;
 }
 
 #workspaces button.urgent {
-    background: #222222;
-    color: #ffffff;
+    background: #220938;
+    color: #dccfef;
 }
 
 #workspaces button.inactive {
-    background: #222222;
-    color: #ffffff;
+    background: #220938;
+    color: #dccfef;
 }
+
+#workspaces button:hover {
+    background: #c9b2db;
+    color: #220938
+}
+
 
 /* Window title */
 #window {
     padding: 4px 10px;
     margin: 4px;
     border-radius: 8px;
-    background: #851fd4;
+    background: #c9b2db;
+    color: #220938;
+}
+
+window#waybar.empty #window {
+    background: transparent;
 }
 
 /* Generic modules */
 #clock,
 #cpu,
+#bluetooth,
 #memory,
 #temperature,
 #battery,
@@ -60,13 +72,33 @@ window#waybar {
 #pulseaudio,
 #backlight,
 #idle_inhibitor,
-#tray {
-    padding: 4px 10px;
+#tray
+{
+    padding: 4px 6px;
     margin: 4px 3px;
     border-radius: 8px;
-    background: rgba(34, 34, 34, 0);
-    color: #ffffff;
+    background: #220938;
+    color: #dccfef;
 }
+
+/* custom icon formatting*/
+/*
+#custom-fuzzel,
+#custom-power 
+{
+  font-size: 10px;
+  margin: 4px 1px;
+  background: #220938;
+  color: #dccfef;
+}
+
+#custom-fuzzel:hover,
+#custom-power:hover
+{
+  background: #c9b2db;
+  color: #220938;
+}
+*/
 
 /* Hover = focused purple */
 #clock:hover,
@@ -80,15 +112,18 @@ window#waybar {
 #backlight:hover,
 #idle_inhibitor:hover
 {
-    background: #851fd4;
+  background: #c9b2db;
+  color: #220938;
 }
 
 /* Muted / inactive states */
+/* 
 #pulseaudio.muted,
 #network.disconnected {
-    background: #222222;
+    background: #220938;
     color: #908caa;
 }
+*/
 
 /* CPU states*/
 #cpu {
@@ -96,11 +131,23 @@ window#waybar {
 }
 
 #cpu.warning {
-  color: #a6e3a1;
+  background: #220938;
+  color: #a45a52;
 }
 
 #cpu.critical {
-  color: #be185d;
+  background: #220938;
+  color: #a45a52;
+}
+
+#cpu.warning:hover {
+  background: #c9b2db;
+  color: #220938;
+}
+
+#cpu.critical:hover {
+  background: #c9b2db;
+  color: #220938;
 }
 
 /* Memory/RAM */
@@ -109,12 +156,25 @@ window#waybar {
 }
 
 #memory.warning {
-  color: #a6e3a1;
+  background: #220938;
+  color: #a45a52;
 }
 
 #memory.critical {
-  color: #be185d;
+  background: #220938;
+  color: #a45a52;
 }
+
+#memory.warning:hover {
+  background: #c9b2db;
+  color: #220938;
+}
+
+#memory.critical:hover {
+  background: #c9b2db;
+  color: #220938;
+}
+
 
 /* Temperature */
 #temperature {
@@ -122,7 +182,23 @@ window#waybar {
 }
 
 #temperature.critical {
-  color: #be185d;
+  background: #220938;
+  color: #a45a52;
+}
+
+#temperature.critical {
+  background: #220938;
+  color: #a45a52;
+}
+
+#temperature.critical:hover {
+  background: #c9b2db;
+  color: #220938;
+}
+
+#temperature.critical:hover {
+  background: #c9b2db;
+  color: #220938;
 }
 
 /* Battery states */
@@ -132,9 +208,21 @@ window#waybar {
 }
 
 #battery.charging {
+  background: #220938;
   color: #a6e3a1;  /* green when charging */
 }
 
 #battery.critical {
-    color: #be185d;
+  background: #220938;
+  color: #a45a52;
+}
+
+#battery.charging:hover {
+  background: #c9b2db;
+  color: #220938;
+}
+
+#battery.critical:hover {
+  background: #c9b2db;
+  color: #220938;
 }
