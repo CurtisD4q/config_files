@@ -25,7 +25,7 @@ set $menu fuzzel
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/curtis/Pictures/image1.jpg fill
+output * bg /home/curtis/Pictures/image2.jpg fill
 
 #
 # Example configuration:
@@ -52,28 +52,30 @@ exec ~/.local/bin/swayidle-media-wrap
 #
 # Example configuration:
 #
-   input type:touchpad {
-       dwt enabled
-       tap enabled
-       natural_scroll enabled
-       middle_emulation enabled
-  }
-#
-   input type:keyboard {
-       xkb_layout "gb"
-   }
-#
+
+input type:touchpad {
+  dwt enabled
+  tap enabled
+  natural_scroll enabled
+  middle_emulation enabled
+}
+
+input type:keyboard {
+  xkb_layout "gb"
+}
+
+
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
 
 #Gaps between windows
 #gaps top 10
 gaps inner 10
-gaps outer 7
-gaps left 7
-gaps right 7
-gaps bottom 7
-gaps top 7
+gaps outer 1
+#gaps left 7
+#gaps right 7
+#gaps bottom 7
+#gaps top 7
 
 ### Key bindings
 #
@@ -251,28 +253,32 @@ bindsym $mod+r mode "resize"
 # Border color = neon purple (#9B30FF)
 # Background/text = monochrome grayscale
 
-client.focused          #9229e6 #9229e6 #FFFFFF #9229e6 #9229e6
+client.focused          #c9b2db #c9b2db #260940 #c9b2db #c9b2db
 client.focused_inactive #260940 #260940 #CCCCCC #260940 #260940
+# client.focused_inactive #4d1d7d #4d1d7d #dccfef #4d1d7d #4d1d7d
 client.unfocused        #260940 #260940 #CCCCCC #260940 #260940
 client.urgent           #834842 #a45a52 #FFFFFF #be185d #a45a52
 
 #Normal borders so gaps are visible 
-for_window [app_id=".*"] border pixel 4
+for_window [app_id=".*"] border pixel 3
 #default_border pixel 3        
 #default_floating_border pixel 3
 
-smart_corner_radius off
+smart_corner_radius on
+corner_radius 4
 blur enable
 shadows enable
-corner_radius 8
 shadow_blur_radius 20
 
-layer_effects "waybar" {
-    blur enable
-    shadows enable
-    corner_radius 8
-    shadow_blur_radius 20
-}
+#layer_effects "waybar" {
+#    corner_radius 6
+#}
+#
+#layer_effects "waybar" {
+#    blur enable
+#    shadows enable 
+#    shadow_blur_radius 20
+#}
 
 # Status Bar
 #
@@ -287,4 +293,3 @@ exec ~/.config/sway/waybar-launch.sh
 #exec ~/.config/sway/waybar-autohide.sh
 
 include /etc/sway/config.d/* 
-exec swayfx
