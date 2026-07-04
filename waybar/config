@@ -2,9 +2,9 @@
   "layer": "top",
   "position": "top",
   "exclusive": true,
-  "margin-top": 11,
-  "margin-left": 18,
-  "margin-right": 18,
+  "margin-top": 10,
+  "margin-left": 11,
+  "margin-right": 11,
 
   "modules-left": ["custom/left", "sway/workspaces", "sway/mode", "sway/window", "custom/scratchpad"],
   "modules-center": ["clock", "custom/fuzzel"],
