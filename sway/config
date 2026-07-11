@@ -17,7 +17,7 @@ set $down Down
 set $up Up
 set $right Right
 # Your preferred terminal emulator
-set $term foot
+set $term kitty
 # Your preferred application launcher
 #set $menu dmenu 
 set $menu fuzzel
@@ -270,15 +270,12 @@ blur enable
 shadows enable
 shadow_blur_radius 20
 
-#layer_effects "waybar" {
-#    corner_radius 6
-#}
-#
-#layer_effects "waybar" {
-#    blur enable
-#    shadows enable 
-#    shadow_blur_radius 20
-#}
+layer_effects "waybar" {
+    corner_radius 4
+    blur enable
+    shadows enable
+    shadow_blur_radius 20
+}
 
 # Status Bar
 #
@@ -289,7 +286,11 @@ shadow_blur_radius 20
 #    position top
 #}
 
-exec ~/.config/sway/waybar-launch.sh
-#exec ~/.config/sway/waybar-autohide.sh
+# In your Sway config
+exec waybar &
+exec sleep 2 && pkill -SIGUSR2 waybar
+#exec_always ~/.config/sway/waybar-launch.sh
+exec lxpolkit
+exec_always kanshi
 
 include /etc/sway/config.d/* 
