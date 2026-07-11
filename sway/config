@@ -289,7 +289,6 @@ layer_effects "waybar" {
 # In your Sway config
 exec waybar &
 exec sleep 2 && pkill -SIGUSR2 waybar
-#exec_always ~/.config/sway/waybar-launch.sh
 exec lxpolkit
 exec_always kanshi
 
