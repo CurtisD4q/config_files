@@ -187,6 +187,9 @@ gaps outer 1
     for_window [app_id = "cinnamon-settings"] floating enable
     for_window [app_id = "blueman-manager"] floating enable
     for_window [app_id = "gnome-system-monitor"] floating enable
+    for_window [app_id="kitty" title="general-settings-launcher.sh"] floating enable
+    for_window [app_id="kitty" title="advanced-settings-launcher.sh"] floating enable
+
 
     for_window [window_type="dialog"] floating enable
     for_window [window_type="utility"] floating enable
@@ -270,12 +273,12 @@ blur enable
 shadows enable
 shadow_blur_radius 20
 
-layer_effects "waybar" {
-    corner_radius 4
-    blur enable
-    shadows enable
-    shadow_blur_radius 20
-}
+#layer_effects "waybar" {
+#    corner_radius 4
+#    blur enable
+#    shadows enable
+#    shadow_blur_radius 20
+#}
 
 # Status Bar
 #
@@ -287,9 +290,10 @@ layer_effects "waybar" {
 #}
 
 # In your Sway config
-exec waybar &
-exec sleep 2 && pkill -SIGUSR2 waybar
+exec waybar
+#exec sh -c 'sleep 2 && pkill -SIGUSR2 waybar'
+#exec_always ~/.config/sway/waybar-launch.sh
 exec lxpolkit
-exec_always kanshi
+exec kanshi
 
 include /etc/sway/config.d/* 
