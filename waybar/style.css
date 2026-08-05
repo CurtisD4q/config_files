@@ -48,6 +48,26 @@ window#waybar {
 }
 
 
+/* Taskbar */
+#taskbar button {
+   padding: 4px 10px;
+   margin: 4px 3px;
+   border-radius: 8px;
+   background: #220938;
+   color: #dccfef;
+}
+
+#taskbar button:hover {
+    background: #c9b2db;
+    color: #220938;
+}
+
+#taskbar button.active {
+    background: #c9b2db;
+    color: #220938;
+}
+
+
 /* Window title */
 #window {
     padding: 4px 10px;
@@ -65,11 +85,11 @@ window#waybar.empty #window {
 #clock,
 #cpu,
 #bluetooth,
+#pulseaudio,
 #memory,
 #temperature,
 #battery,
 #network,
-#pulseaudio,
 #backlight,
 #idle_inhibitor,
 #tray
@@ -100,10 +120,25 @@ window#waybar.empty #window {
 }
 */
 
+#custom-volume {
+  font-size: 10px;
+  margin: 4px 1px;
+  background: #220938;
+  color: #dccfef;
+}
+
+#custom-volume:hover {
+  background: #c9b2db;
+  color: #220938;
+}
+
+
+
 /* Hover = focused purple */
 #clock:hover,
 #cpu:hover,
 #bluetooth:hover,
+#pulseaudio:hover,
 #memory:hover,
 #temperature:hover,
 #battery:hover,
