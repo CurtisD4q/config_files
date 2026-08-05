@@ -2,11 +2,11 @@
   "layer": "top",
   "position": "top",
   "exclusive": true,
-  "margin-top": 10,
+  "margin-top": 11,
   "margin-left": 11,
   "margin-right": 11,
 
-  "modules-left": ["custom/left", "sway/workspaces", "sway/mode", "sway/window", "custom/scratchpad"],
+  "modules-left": ["custom/left", "sway/workspaces", "sway/mode", "sway/window", "custom/scratchpad", "wlr/taskbar"],
   "modules-center": ["clock", "custom/fuzzel"],
   "modules-right": [
     "idle_inhibitor",
@@ -37,7 +37,7 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "blueman-manager"
+    "on-click": "/usr/local/bin/general-settings-bluetooth.sh"
   },
 
   "network": {
@@ -46,32 +46,33 @@
     "format-disconnected": "󰖪  Network Disconnected",
     "format-linked": "󰖩   No IP",
     "format-disabled": "󰖪  Network Disabled",
-    "on-click": "nmgui"
+    "on-click": "/usr/local/bin/general-settings-network.sh"
   },
 
   "pulseaudio": {
     "format": " {volume}%",
     "format-muted": "",
-    "on-click": "cinnamon-settings sound"
+    "volume-format": "{volume}",
+    "on-click": "/usr/local/bin/general-settings-launcher.sh"
   },
 
   "backlight": {
     "format": " {percent}%",
-    "on-click": "cinnamon-settings screen"
+    "on-click": "/usr/local/bin/general-settings-display.sh"
   },
 
-"battery": {
-    "format": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
-    "format-plugged": "  {capacity}%",
-    "format-critical": "󰂃 {capacity}%",
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    "interval": 1,
-    "critical": 15,
-    "states": {
-        "critical": 15
-    }
-},
+  "battery": {
+      "format": "{icon} {capacity}%",
+      "format-charging": "󰂄 {capacity}%",
+      "format-plugged": "  {capacity}%",
+      "format-critical": "󰂃 {capacity}%",
+      "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "interval": 1,
+      "critical": 15,
+      "states": {
+          "critical": 15
+      }
+  },
 
   "cpu": {
     "format": " {usage}%",
@@ -134,7 +135,16 @@
   "tooltip": true
   },
 
-  "sway/window": { "max-length": 50 },
+  "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 20,
+      "spacing": 6,
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "on-click-middle": "close"
+  },
+
+  "sway/window": { "format": "{title}", "max-length": 50 },
   "custom/left": { "format": "   " },
   "custom/right": { "format": "   " },
   "tray": { "spacing": 6 }
