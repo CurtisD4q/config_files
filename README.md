@@ -47,6 +47,7 @@ playerctl
 brightnessctl  
 sherlock  
 nmap  
+nwg-dock  
 wlogout  
 nmgui  
 ytcui  
