@@ -71,7 +71,7 @@
       "critical": 15,
       "states": {
           "critical": 15
-      }
+      },
       "on-click": "foot /usr/local/bin/general-settings-power.sh"
   },
 
