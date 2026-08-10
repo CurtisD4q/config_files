@@ -115,7 +115,7 @@
 
   "custom/power": {
     "format": "<span font='16'>⏻</span>",
-    "on-click": "wlogout", // Opens a visual menu for Logout/Shutdown/Restart
+    "on-click": "~/.config/waybar/power-menu.sh", // Opens a visual menu for Logout/Shutdown/Restart
     "tooltip-format": "Power Menu",
     "tooltip": true
   },
@@ -141,7 +141,8 @@
       "spacing": 6,
       "tooltip-format": "{title}",
       "on-click": "activate",
-      "on-click-middle": "close"
+      "on-click-middle": "close",
+      "all-outputs": true
   },
 
   "sway/window": { "format": "{title}", "max-length": 50 },
