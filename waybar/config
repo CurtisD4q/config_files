@@ -37,7 +37,7 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "/usr/local/bin/general-settings-bluetooth.sh"
+    "on-click": "foot /usr/local/bin/general-settings-bluetooth.sh"
   },
 
   "network": {
@@ -46,19 +46,19 @@
     "format-disconnected": "󰖪  Network Disconnected",
     "format-linked": "󰖩   No IP",
     "format-disabled": "󰖪  Network Disabled",
-    "on-click": "/usr/local/bin/general-settings-network.sh"
+    "on-click": "foot /usr/local/bin/general-settings-network.sh"
   },
 
   "pulseaudio": {
     "format": " {volume}%",
     "format-muted": "",
     "volume-format": "{volume}",
-    "on-click": "/usr/local/bin/general-settings-launcher.sh"
+    "on-click": "foot /usr/local/bin/general-settings-audio.sh"
   },
 
   "backlight": {
     "format": " {percent}%",
-    "on-click": "/usr/local/bin/general-settings-display.sh"
+    "on-click": "foot /usr/local/bin/general-settings-display.sh"
   },
 
   "battery": {
@@ -72,6 +72,7 @@
       "states": {
           "critical": 15
       }
+      "on-click": "foot /usr/local/bin/general-settings-power.sh"
   },
 
   "cpu": {
