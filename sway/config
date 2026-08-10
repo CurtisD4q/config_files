@@ -184,12 +184,14 @@ gaps outer 1
     
     #launch the following applications in floating mode
     
-    for_window [app_id = "cinnamon-settings"] floating enable
-    for_window [app_id = "blueman-manager"] floating enable
-    for_window [app_id = "gnome-system-monitor"] floating enable
     for_window [app_id="general-settings"] floating enable
     for_window [app_id="advanced-settings"] floating enable
-    
+    for_window [app_id="settings-power"] floating enable
+    for_window [app_id="settings-network"] floating enable
+    for_window [app_id="settings-datetime"] floating enable
+    for_window [app_id="settings-sound"] floating enable
+    for_window [app_id="settings-bluetooth"] floating enable
+    for_window [app_id="settings-display"] floating enable 
 
     for_window [window_type="dialog"] floating enable
     for_window [window_type="utility"] floating enable
