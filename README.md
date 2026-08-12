@@ -51,4 +51,7 @@ nwg-dock
 wlogout  
 nmgui  
 ytcui  
-minamalistmp3player  
+minamalistmp3player
+dragon
+yazi
+gtklock
