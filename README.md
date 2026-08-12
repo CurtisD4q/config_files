@@ -55,3 +55,4 @@ minamalistmp3player
 dragon  
 yazi  
 gtklock  
+zellij  
