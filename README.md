@@ -57,3 +57,4 @@ satty
 yazi  
 gtklock  
 tmux  
+jq  
