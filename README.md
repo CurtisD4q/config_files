@@ -24,6 +24,8 @@ Notification manager: Mako
 
 Other terminal programs installed:
 
+tui-settings-mananger (private, made by me)  
+fastfetch  
 fzf  
 bat  
 radeontop  
