@@ -49,6 +49,9 @@ wlogout
 nmgui  
 ytcui  
 minamalistmp3player  
+grim  
+slurp  
+satty  
 yazi  
 gtklock  
 tmux  
