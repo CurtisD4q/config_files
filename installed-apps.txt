@@ -1,0 +1,133 @@
+Accessibility
+Advanced Settings
+Appearance
+Applications
+Bluetooth
+Bluetooth Adapters
+Bluetooth Manager
+Bottles
+BrowserOS
+btop++
+Calculator
+Color
+Color Profile Viewer
+Color Profiles
+Counter-Strike 2
+CrealityPrint
+Darksiders II Deathinitive Edition
+Date & Time
+Default Applications
+DELTARUNE (Chapter 1 & 2 DEMO)
+Detroit: Become Human
+Disks
+Display
+Display & Graphics
+Displays
+Document Scanner
+Document Viewer
+DOOM
+DOSBox Staging
+Dragon Player
+Exaile
+Eye of MATE Image Viewer
+File Manager
+File Roller
+Files
+Firefox
+Firewall
+Flatseal
+Foot
+Foot Client
+Foot Server
+Game Conqueror
+General Settings
+Git GUI
+GNOME System Monitor
+Graphics Tablet
+GTK Settings
+Help
+HexChat
+Hitman 2: Silent Assassin
+Hitman: Absolution
+Hitman: Blood Money
+Hitman: Codename 47
+Hitman: Contracts
+HITMAN™
+Icon Browser
+Input Method Selector
+Keyboard
+kitty
+Lemma
+LibreOffice Calc
+LibreOffice Impress
+LibreOffice Writer
+LibreWolf
+Login Window
+Lutris
+Mail Reader
+Marker
+Mouse & Touchpad
+Mouse and Touchpad
+mpv Media Player
+Neovim
+NetHack
+Network
+NM GUI
+Notepad
+Notifications
+Oracle VirtualBox
+Parental Controls
+Pidgin
+Power
+Print Settings
+Privacy & Security
+Problem Reporting
+qutebrowser
+Realm of the Mad God Exalt
+Regedit
+Region & Language
+Rygel Preferences
+Screenshot
+ScummVM
+SELinux Troubleshooter
+Settings
+Settings Editor
+Settings Manager
+Shotcut
+Shotwell
+Software
+Sound
+Spectacle
+Steam
+Steam Tinker Launch (Settings)
+System Monitor
+Terminal
+Terminal Emulator
+Text Editor
+The Elder Scrolls V: Skyrim Special Edition
+The Walking Dead
+The Walking Dead: Season Two
+Thonny
+Tour
+Transistor
+Transmission
+Undertale
+Users & Accounts
+VLC media player
+Volume Control
+Web Browser
+WezTerm
+Windows Installer File
+Wine Boot
+Wine Configuration
+Wine File
+Wine Help
+Wine OLE View
+Wine Software Uninstaller
+Wine Wordpad
+WineMine
+Winetricks
+XawTV Television Viewer
+Xfburn
+Yazi File Manager
+Zed
