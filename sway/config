@@ -18,14 +18,17 @@ set $up Up
 set $right Right
 # Your preferred terminal emulator
 set $term foot
-# Your preferred application launcher
-#set $menu dmenu 
+# Your preferred application launcher 
 set $menu fuzzel
+
+
+include /etc/sway/config.d/* 
+
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/curtis/Pictures/image2.jpg fill
+output * bg /home/curtis/Pictures/wallpaper_purple3.jpg fill
 
 #
 # Example configuration:
@@ -45,8 +48,9 @@ font pango:Adwaita Sans Regular 12
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-exec ~/.local/bin/swayidle-media-wrap
+exec ~/.config/sway/swayidle-media-wrap
 
+bindsym $mod+Shift+l exec /usr/local/bin/gtklock -d
 
 ### Input configuration
 #
@@ -101,8 +105,22 @@ gaps outer 1
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
+    #Reload waybar
+    bindsym $mod+Shift+r exec killall waybar; waybar
+
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec "~/.config/waybar/power-menu.sh"
+    bindsym $mod+Shift+e exec "~/.config/sway/power-menu.sh"
+
+    #Toggle laptop display on/off when lid is closed
+    bindswitch --reload --locked lid:on exec ~/.config/sway/sway-output-manager.sh --oneshot
+    bindswitch --reload --locked lid:off exec ~/.config/sway/sway-output-manager.sh --oneshot
+    exec ~/.config/sway/sway-output-manager.sh
+
+    #Disable external monitor
+    bindsym $mod+o exec ~/.config/sway/toggle-external-output.sh
+
+    #Stop mouse from going to other screens whilst running fullscreen applications
+    exec ~/.config/sway/sway-fullscreen-confine.sh
 #
 # Moving around:
 #
@@ -178,20 +196,18 @@ gaps outer 1
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
-
+    
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
     
     #launch the following applications in floating mode
     
-    for_window [app_id="general-settings"] floating enable
-    for_window [app_id="advanced-settings"] floating enable
-    for_window [app_id="settings-power"] floating enable
-    for_window [app_id="settings-network"] floating enable
-    for_window [app_id="settings-datetime"] floating enable
-    for_window [app_id="settings-sound"] floating enable
-    for_window [app_id="settings-bluetooth"] floating enable
-    for_window [app_id="settings-display"] floating enable 
+    #Open all settings menus in floating mode
+    for_window [app_id="^(general-settings|advanced-settings|settings-.*)$"] {
+        floating enable
+        resize set 900 600
+        move position center
+    }
 
     for_window [window_type="dialog"] floating enable
     for_window [window_type="utility"] floating enable
@@ -201,8 +217,6 @@ gaps outer 1
     for_window [window_type="popup_menu"] floating enable
     for_window [window_type="tooltip"] floating enable
     for_window [window_type="notification"] floating enable
-
-    for_window [shell="xwayland"] focus follows mouse no
 
     bindsym $mod+space focus mode_toggle
 
@@ -216,6 +230,7 @@ gaps outer 1
 
     # Move the currently focused window to the scratchpad
     bindsym $mod+Shift+minus move scratchpad
+    #bindsym $mod+Shift+plus exec ~/.config/sway/overview.sh
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
@@ -245,11 +260,14 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
     bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
     bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    
     # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    bindsym --locked XF86MonBrightnessDown exec /usr/local/bin/waybar-brightness-set.sh down
+    bindsym --locked XF86MonBrightnessUp exec /usr/local/bin/waybar-brightness-set.sh up
+    
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    bindsym Print exec grim -g "$(slurp)" - | wl-copy
+    bindsym Shift+Print exec grim ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png
 
 # -----------------------------
 # Window Borders (Monochrome + Neon Purple Outer)
@@ -260,14 +278,11 @@ bindsym $mod+r mode "resize"
 
 client.focused          #c9b2db #c9b2db #260940 #c9b2db #c9b2db
 client.focused_inactive #260940 #260940 #CCCCCC #260940 #260940
-# client.focused_inactive #4d1d7d #4d1d7d #dccfef #4d1d7d #4d1d7d
 client.unfocused        #260940 #260940 #CCCCCC #260940 #260940
 client.urgent           #834842 #a45a52 #FFFFFF #be185d #a45a52
 
-#Normal borders so gaps are visible 
+#Swayfx aesthetics 
 for_window [app_id=".*"] border pixel 3
-#default_border pixel 3        
-#default_floating_border pixel 3
 
 smart_corner_radius on
 corner_radius 4
@@ -283,19 +298,5 @@ shadow_blur_radius 20
 #}
 
 # Status Bar
-#
-# Read `man 5 sway-bar` for more information about this section.
-
-#bar {
-#    swaybar_command waybar
-#    position top
-#}
-
-# In your Sway config
-exec waybar
-#exec sh -c 'sleep 2 && pkill -SIGUSR2 waybar'
-#exec_always ~/.config/sway/waybar-launch.sh
+exec_always sh -c "killall -q waybar; waybar"
 exec lxpolkit
-exec kanshi
-
-include /etc/sway/config.d/* 
