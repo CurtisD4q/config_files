@@ -13,7 +13,7 @@
     "pulseaudio",
     "bluetooth",
     "network",
-    "backlight",
+    "custom/backlight",
     "cpu",
     "memory",
     "temperature", 
@@ -30,7 +30,7 @@
   },
 
   "bluetooth": {
-    "format": "  {status} ",
+    "format": " {status}",
     "format-connected": " {device_alias}",
     "format-connected-battery": " {device_alias} {device_battery_percentage}%",
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
@@ -56,9 +56,12 @@
     "on-click": "foot --app-id=settings-sound /usr/local/bin/general-settings-sound.sh"
   },
 
-  "backlight": {
-    "format": " {percent}%",
-    "on-click": "foot --app-id=settings-display /usr/local/bin/general-settings-display.sh"
+  "custom/backlight": {
+      "format": "  {} ",
+      "exec": "/usr/local/bin/waybar-brightness.sh",
+      "return-type": "json",
+      "interval": 2,
+      "on-click": "foot --app-id=settings-display /usr/local/bin/general-settings-display.sh"
   },
 
   "battery": {
@@ -116,160 +119,7 @@
 
   "custom/power": {
     "format": "<span font='16'>⏻</span>",
-    "on-click": "~/.config/waybar/power-menu.sh", // Opens a visual menu for Logout/Shutdown/Restart
-    "tooltip-format": "Power Menu",
-    "tooltip": true
-  },
-
-  "custom/scratchpad": {
-    "format": " 󰖯 {}",
-    "exec": "~/.config/sway/scratchpad.sh",
-    "interval": 1,
-    "on-click": "swaymsg scratchpad show",
-    "tooltip": false
-  },
-
-  "custom/fuzzel": {
-  "format": " 󰀻 ",
-  "on-click": "fuzzel --show drun",
-  "tooltip-format": "App Launcher",
-  "tooltip": true
-  },
-
-  "wlr/taskbar": {
-      "format": "{icon}",
-      "icon-size": 20,
-      "spacing": 6,
-      "tooltip-format": "{title}",
-      "on-click": "activate",
-      "on-click-middle": "close",
-      "all-outputs": true
-  },
-
-  "sway/window": { "format": "{title}", "max-length": 50 },
-  "custom/left": { "format": "   " },
-  "custom/right": { "format": "   " },
-  "tray": { "spacing": 6 }
-}
-{
-  "layer": "top",
-  "position": "top",
-  "exclusive": true,
-  "margin-top": 11,
-  "margin-left": 11,
-  "margin-right": 11,
-
-  "modules-left": ["custom/left", "sway/workspaces", "sway/mode", "sway/window", "custom/scratchpad", "wlr/taskbar"],
-  "modules-center": ["clock", "custom/fuzzel"],
-  "modules-right": [
-    "idle_inhibitor",
-    "pulseaudio",
-    "bluetooth",
-    "network",
-    "backlight",
-    "cpu",
-    "memory",
-    "temperature", 
-    "battery",
-    "tray",
-    "custom/gap",
-    "custom/power",
-    "custom/right"
-  ],
-
-  "clock": {
-    "format": "{:%a %d %b %H:%M}",
-    "on-click": "foot --app-id=settings-datetime /usr/local/bin/general-settings-datetime.sh"
-  },
-
-  "bluetooth": {
-    "format": "  {status} ",
-    "format-connected": " {device_alias}",
-    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "foot --app-id=settings-bluetooth /usr/local/bin/general-settings-bluetooth.sh"
-  },
-
-  "network": {
-    "format-wifi": "󰖩 Wifi: {essid}",
-    "format-ethernet": "󰈀 Ethernet: {ipaddr}",
-    "format-disconnected": "󰖪  Network Disconnected",
-    "format-linked": "󰖩   No IP",
-    "format-disabled": "󰖪  Network Disabled",
-    "on-click": "foot --app-id=settings-network /usr/local/bin/general-settings-network.sh"
-  },
-
-  "pulseaudio": {
-    "format": " {volume}%",
-    "format-muted": "",
-    "volume-format": "{volume}",
-    "on-click": "foot --app-id=settings-sound /usr/local/bin/general-settings-sound.sh"
-  },
-
-  "backlight": {
-    "format": " {percent}%",
-    "on-click": "foot --app-id=settings-display /usr/local/bin/general-settings-display.sh"
-  },
-
-  "battery": {
-      "format": "{icon} {capacity}%",
-      "format-charging": "󰂄 {capacity}%",
-      "format-plugged": "  {capacity}%",
-      "format-critical": "󰂃 {capacity}%",
-      "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-      "interval": 1,
-      "critical": 15,
-      "states": {
-          "critical": 15
-      },
-      "on-click": "foot --app-id=settings-power /usr/local/bin/general-settings-power.sh"
-  },
-
-  "cpu": {
-    "format": " {usage}%",
-    "interval": 1,
-    "on-click": "gnome-system-monitor"
-  },
-
-  "memory": {
-    "format": " {}%",
-    "interval": 1,
-    "on-click": "gnome-system-monitor"
-  },
-
-  "temperature": {
-    "critical-threshold": 80,
-    "format": " {temperatureC}°C",
-    "interval": 1,
-    "on-click": "gnome-system-monitor"
-  },
-
-
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    },
-    "format-activated": "<span color='#f38ba8'>Manual Awake</span>",
-    "format-deactivated": "Auto Sleep",
-    "tooltip-format-activated": "System will NOT sleep",
-    "tooltip-format-deactivated": "System follows power rules",
-    "on-click": "~/.config/sway/inhibit-toggle.sh"
-  },
-
-
-  "custom/gap": {
-    "format": " ",
-    "tooltip": false
-  },
-
-  "custom/power": {
-    "format": "<span font='16'>⏻</span>",
-    "on-click": "~/.config/waybar/power-menu.sh", // Opens a visual menu for Logout/Shutdown/Restart
+    "on-click": "~/.config/sway/power-menu.sh", // Opens a visual menu for Logout/Shutdown/Restart
     "tooltip-format": "Power Menu",
     "tooltip": true
   },
